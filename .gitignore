@@ -1,0 +1,15 @@
+# ignore archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.csv
+*.env
+*.png
+
+# ignore specific files
+__pycache__
+.vscode
+
+# ignore dataset folder and subfolders
+data/
