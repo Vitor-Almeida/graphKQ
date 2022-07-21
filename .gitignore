@@ -10,6 +10,8 @@
 # ignore specific files
 __pycache__
 .vscode
+lawtranslator-9bb51ce495c7.json
 
 # ignore dataset folder and subfolders
 data/
+databook/
