@@ -25,6 +25,7 @@ for match in re.finditer(r'Art.*?[0-9]+', text):
 for idx,articles in enumerate(found_articles):
 
     ##arrumar o OCR quando: GOVERNADOR no pdf vira GOVER NADOR entre outros
+    ##tradutor arruma isso 
 
     if idx == len(found_articles)-1:
         found_articles[idx]['splitText'] = text[found_articles[idx]['start']:len(text)]
@@ -37,7 +38,6 @@ for idx,articles in enumerate(found_articles):
         found_articles[idx]['splitText'] = found_articles[idx]['splitText'].replace("\n"," ")
         found_articles[idx]['splitText'] = re.sub('\\s+', ' ', found_articles[idx]['splitText'])
         found_articles[idx]['splitText'] = found_articles[idx]['splitText'].strip()
-
 
 def translate_text(text):
 
@@ -58,8 +58,6 @@ def translate_text(text):
 #for idx,articles in enumerate(found_articles):
 #for idx in range(0,2):
 #    found_articles[idx]['splitTextTranslated'] = translate_text(found_articles[idx]['splitText'])
-
-
 
 df = pd.DataFrame.from_dict(found_articles, orient='index')
 df.to_csv(f'data/processedText/{filename}.csv',index=False)
